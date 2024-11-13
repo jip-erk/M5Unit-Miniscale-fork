@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/m5stack/M5Unit-Miniscale.git"
+    "url": "https://github.com/jip-erk/M5Unit-Miniscale-fork.git"
   },
   "version": "0.0.1",
   "frameworks": "arduino",

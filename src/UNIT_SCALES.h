@@ -17,7 +17,6 @@
 #define UNIT_SCALES_CAL_DATA_INT_REG    0x60
 #define UNIT_SCALES_CAL_DATA_STRING_REG 0x70
 #define UNIT_SCALES_FILTER_REG          0x80
-#define UNIT_SCALES_FULL_WEIGHT_REG     0x90
 #define JUMP_TO_BOOTLOADER_REG          0xFD
 #define FIRMWARE_VERSION_REG            0xFE
 #define I2C_ADDRESS_REG                 0xFF
@@ -58,10 +57,6 @@ class UNIT_SCALES {
     uint8_t getAvgFilter(void);
     bool setEmaFilter(uint8_t ema);
     uint8_t getEmaFilter(void);
-
-    void setFullWeight(void); 
-    void setFullWeightValue(float weight);  
-    float getFullWeight(void); 
 };
 
 #endif

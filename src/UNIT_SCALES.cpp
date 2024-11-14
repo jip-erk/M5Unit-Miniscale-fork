@@ -193,34 +193,6 @@ uint8_t UNIT_SCALES::setI2CAddress(uint8_t addr) {
     return _addr;
 }
 
-void UNIT_SCALES::setFullWeight(void) {
-    // Store current weight as full weight
-    float currentWeight = getWeight();
-    setFullWeightValue(currentWeight);
-}
-
-void UNIT_SCALES::setFullWeightValue(float weight) {
-    uint8_t datatmp[4];
-    uint8_t *p;
-    p = (uint8_t *)&weight;
-
-    memcpy(datatmp, p, 4);
-    writeBytes(_addr, UNIT_SCALES_FULL_WEIGHT_REG, datatmp, 4);
-    delay(100);
-}
-
-float UNIT_SCALES::getFullWeight(void) {
-    uint8_t data[4];
-    float weight;
-    uint8_t *p;
-
-    if (readBytes(_addr, UNIT_SCALES_FULL_WEIGHT_REG, data, 4)) {
-        p = (uint8_t *)&weight;
-        memcpy(p, data, 4);
-    }
-    return weight;
-}
-
 uint8_t UNIT_SCALES::getI2CAddress(void) {
     _wire->beginTransmission(_addr);
     _wire->write(I2C_ADDRESS_REG);
